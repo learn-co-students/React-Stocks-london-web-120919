@@ -1,16 +1,18 @@
 import React from 'react'
+// import SearchBar from './SearchBar';
 
-const Stock = () => (
-  <div>
-
+const Stock = ({id, ticker, name, type, addPortfolio, price, stock}) => (
+    
+  <div onClick={() => addPortfolio(stock)}>
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">{
-            //Company Name
-          }</h5>
-        <p className="card-text">{
-            //ticker: stock price
-          }</p>
+        <h5 className="card-title">
+            {name}
+          </h5>
+        <p>type: {type}</p>
+        <p className="card-text">
+            {ticker}: {price}
+          </p>
       </div>
     </div>
 

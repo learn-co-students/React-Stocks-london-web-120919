@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Stock = () => (
+const Stock = ({name, ticker, price}) => (
   <div>
 
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">{
-            //Company Name
+            name
           }</h5>
         <p className="card-text">{
-            //ticker: stock price
+            `${ticker} : ${price}`
           }</p>
       </div>
     </div>

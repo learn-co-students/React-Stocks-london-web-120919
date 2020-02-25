@@ -3,12 +3,27 @@ import Header from './components/Header'
 import MainContainer from './containers/MainContainer'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      stocks: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/stocks')
+    .then(response => response.json())
+    .then(json => this.setState({
+      stocks: json
+    }))
+  }
+
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header/>
-        <MainContainer/>
-      </div>
+        <MainContainer stocks={this.state.stocks}/>
+      </React.Fragment>
     );
   }
 }
